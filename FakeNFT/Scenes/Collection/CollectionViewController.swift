@@ -219,7 +219,7 @@ final class CollectionViewController: UIViewController, LoadingView, ErrorView {
                 .processor(processor)
             ]) { result in
                 switch result {
-                case .success(let value):
+                case .success(_):
                     break
                 case .failure(let error):
                     print("Job failed: \(error.localizedDescription)")

@@ -66,7 +66,7 @@ final class BasketTableViewCell: UITableViewCell {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "deleteCard"), for: .normal)
         button.tintColor = .segmentActive
-        button.addTarget(self, action: #selector(didTapDeleteButton), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(didTapDeleteButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()

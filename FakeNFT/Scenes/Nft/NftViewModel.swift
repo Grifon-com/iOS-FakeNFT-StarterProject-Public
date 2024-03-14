@@ -221,7 +221,6 @@ final class NftViewModel: NftViewModelProtocol {
                 switch result {
                 case .success(let nfts):
                     self.updateCollectionView(nfts)
-                    guard let nft = self.nft else { return }
                 case .failure(let error):
                     self.state = .failed(error)
                 }
