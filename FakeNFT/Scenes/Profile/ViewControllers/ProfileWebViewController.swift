@@ -28,6 +28,7 @@ final class ProfileWebViewController: UIViewController, LoadingView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.accessibilityIdentifier = "ProfileWebView"
         view.backgroundColor = .whiteUniversal
         setupUiItems()
     }

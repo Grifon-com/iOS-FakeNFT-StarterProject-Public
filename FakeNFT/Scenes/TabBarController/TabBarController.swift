@@ -2,7 +2,7 @@ import UIKit
 
 final class TabBarController: UITabBarController {
     
-    var servicesAssembly: ServicesAssembly!
+    var servicesAssembly: ServicesAssembly?
 
     private let profileTabBarItem = UITabBarItem(
         title: NSLocalizedString(ConstLocalizable.tabProfile, comment: ""),
@@ -93,7 +93,7 @@ final class TabBarController: UITabBarController {
     
     private func createStatsController() -> UINavigationController {
         let userModel = RatingModel()
-        
+        guard let servicesAssembly else { return UINavigationController() }
         let ratingViewModel = RatingViewModel(for: userModel, servicesAssembly: servicesAssembly)
         let ratingViewController = UINavigationController(
             rootViewController: RatingViewController(

@@ -44,6 +44,7 @@ final class ProfileViewController: UIViewController, ErrorView, LoadingView {
     
     private lazy var editProfileButton: UIButton = {
         let editProfileButton = UIButton()
+        editProfileButton.accessibilityIdentifier = "editProfileButton"
         editProfileButton.addTarget(nil, action: #selector(self.didEditTap), for: .touchUpInside)
         editProfileButton.setImage(UIImage(named: ConstantsProfileVC.editProfile.rawValue),
                                    for: .normal)
@@ -106,6 +107,7 @@ final class ProfileViewController: UIViewController, ErrorView, LoadingView {
     
     private lazy var nftTableView: UITableView = {
         let nftTableView = UITableView()
+        nftTableView.accessibilityIdentifier = "ProfileTable"
         nftTableView.translatesAutoresizingMaskIntoConstraints = false
         nftTableView.backgroundColor = .clear
         nftTableView.separatorStyle = .none
@@ -138,6 +140,7 @@ final class ProfileViewController: UIViewController, ErrorView, LoadingView {
     // MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.accessibilityIdentifier = "ProfileView"
         router = Router(sourceViewController: self)
         view.backgroundColor = .whiteUniversal
         bind()
@@ -346,16 +349,19 @@ extension ProfileViewController: UITableViewDataSource {
         let cellModel = viewModel.cellModel
         switch indexPath.row {
         case 0:
+            cell.accessibilityIdentifier = "MyNftCell"
             let text = viewModel.createTextCell(text: ConstLocalizable.profileCellMyNFT,
                                                 count: cellModel.countNFT)
             let profileCellModel = ProfileCellModel(text: text)
             cell.config(with: profileCellModel)
         case 1:
+            cell.accessibilityIdentifier = "FavoriteCell"
             let text = viewModel.createTextCell(text: ConstLocalizable.profileCellFavoritesNFT,
                                                 count: cellModel.countFavoritesNFT)
             let profileCellModel = ProfileCellModel(text: text)
             cell.config(with: profileCellModel)
         case 2:
+            cell.accessibilityIdentifier = "DevelopCell"
             let profileCellModel = ProfileCellModel(text: ConstLocalizable.profileCellDeveloper )
             cell.config(with: profileCellModel)
         default:
