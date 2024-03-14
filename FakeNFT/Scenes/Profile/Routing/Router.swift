@@ -8,8 +8,6 @@
 import UIKit
 
 final class Router: BaseRouter {
-    /*коментарий для ревью: не совсем уверен в правильности всего,
-     что написано в этих методах. буду благодарен за пару советов)*/
     func showMyNft(profile: Profile) {
         guard let sourceVc = sourceViewController as? ProfileViewController
         else { return }
