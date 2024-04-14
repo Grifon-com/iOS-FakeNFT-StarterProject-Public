@@ -178,6 +178,7 @@ final class EditProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.accessibilityIdentifier = "EditView"
         hideKeyboardWhenTappedAround()
         view.backgroundColor = .whiteUniversal
         setupUIItem()

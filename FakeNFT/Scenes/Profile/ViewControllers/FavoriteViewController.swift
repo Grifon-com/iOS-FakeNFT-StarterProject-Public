@@ -65,6 +65,7 @@ final class FavoriteViewController: UIViewController, ErrorView, LoadingView {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .whiteUniversal
+        view.accessibilityIdentifier = "FavoriteView"
         setupUIItem()
         bind()
         viewModel.loadNftLikes()
