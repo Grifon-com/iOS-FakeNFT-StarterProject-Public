@@ -1,4 +1,4 @@
-docs/ProfileDecomposition.md# ТЗ мобильного приложения FakeNFT
+ТЗ мобильного приложения FakeNFT
 
 # Ссылки на скринкасты
 
